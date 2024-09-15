@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stages("Verify branch") {
+        stage("Verify branch") {
             steps {
                 echo "$GIT_BRANCH"
             }
         }
-        stages ('Docker Build') {
+        stage('Docker Build') {
             steps {
                 sh(script:'docker compose build')
             }

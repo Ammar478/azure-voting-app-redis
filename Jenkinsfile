@@ -10,8 +10,12 @@ pipeline {
         stage('Docker Build') {
             steps {
                 sh 'docker-compose build'
-                echo 'docker images builds '
                 
+            }
+        }
+        stage('Start App'){
+            steps{
+                sh 'docker-compose up -d'
             }
         }
     }

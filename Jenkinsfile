@@ -1,23 +1,14 @@
-pipeline {
-    agent any
+@Library('https://github.com/Ammar478/demo-shared-pipeline')
 
-    stages {
-        stage("Verify branch") {
-            steps {
-                echo "$GIT_BRANCH"
-            }
-        }
-        stage('Docker Build') {
-            steps {
-                sh 'docker-compose build'
-                
-            }
-        }
-        stage('Start App'){
+pipeline{
+    agent any
+    stages{
+        stage('Call Library function with an argument'){
             steps{
-                sh 'docker-compose up -d'
+                script {
+                    helloWorld()
+                }
             }
         }
     }
-
 }

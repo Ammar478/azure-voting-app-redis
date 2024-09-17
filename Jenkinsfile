@@ -2,9 +2,9 @@
 
 pipeline{
     agent any
-    stages{
-        stage('Call Library function with an argument'){
-            steps{
+    stages {
+        stage('Call Library function with an argument') {
+            steps {
                 script {
                     helloWorld()
                 }

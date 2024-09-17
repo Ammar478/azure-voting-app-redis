@@ -9,7 +9,6 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                sh 'newgrp docker'
                 sh 'docker-compose build'
                 echo 'docker images builds '
                 
